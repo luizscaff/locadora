@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@if(checkPermission(['admin','superadmin']))
 @section('content')
+@if(checkPermission(['admin','superadmin']))
 <div class="container">
     <div class="row">
         <div class="col-md-12">

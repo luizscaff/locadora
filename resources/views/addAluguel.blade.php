@@ -11,6 +11,7 @@
                   {{csrf_field()}}
                     <div class="form-group">
                       <label for="email">Veículo:</label>
+                      @if($isDisponivel->count() > 0)
                       <select name="modelo" class="form-control" required>
                         <option></option>
                         @foreach($carros as $carro)
@@ -19,9 +20,13 @@
                         @endif
                         @endforeach
                       </select>
+                      @else
+                      <input type="text" readonly="readonly" class="form-control" value="Não há carros disponíveis."></input>
+                      @endif
                     </div>
                     <div class="form-group">
                       <label for="email">Cliente:</label>
+                      @if($isAtivo->count() > 0)
                       <select name="cliente" class="form-control" required>
                         <option></option>
                         @foreach($clientes as $cliente)
@@ -30,12 +35,17 @@
                         @endif
                         @endforeach
                       </select>
+                      @else
+                      <input type="text" readonly="readonly" class="form-control" value="Não há clientes ativos disponíveis."></input>
+                      @endif
                     </div>
                     <div class="form-group">
-                      <label><input type="date" name="data_entrega" class="form-control" required>Data de início:</label>
+                      <label for="dataFim">Data de retorno:</label>
+                      <input type="date" name="data_entrega" class="form-control" required>
                     </div>
                     <div class="form-group">
-                      <label><input type="date" name="data_retorno" class="form-control" required>Data de retorno:</label>
+                      <label for="dataInicio">Data de início:</label>
+                      <input type="date" name="data_retorno" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Registrar</button>
                     <a class="btn btn-primary" role="button" href="home">Voltar</a>

@@ -10,18 +10,17 @@
                 <form method="POST">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label for="email">Nome:</label>
+                        <label for="nome">Nome:</label>
                         <input type="text" name="nome" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">CPF:</label>
-                        <input type="number" name="cpf" class="form-control" required>
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf"  maxlength="50" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Telefone:</label>
-                        <input type="number" name="telefone" class="form-control" required>
+                        <label for="fone">Telefone:</label>
+                        <input type="text" name="telefone" maxlength="50" class="form-control" required>
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                     <a class="btn btn-primary" role="button" href="home">Voltar</a>
                 </form>

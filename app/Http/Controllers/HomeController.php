@@ -74,10 +74,14 @@ class HomeController extends Controller
     }
     public function addAluguel() {
         $carros = Carros::all();
+        $isDisponivel = $carros->where('disponivel', 1);
+
         $clientes = Clientes::all();
+        $isAtivo = $clientes->where('ativo', 1);
+
         $reservas = Reservas::with('carroReserva')->get();
 
-        return view('addAluguel', compact('carros', 'reservas', 'clientes'));
+        return view('addAluguel', compact('carros', 'reservas', 'clientes', 'isDisponivel', 'isAtivo'));
     }
     public function addAluguelDo(Request $req) {
         if ($req->has('modelo') && $req->has('cliente') && $req->has('data_entrega') && $req->has('data_retorno')) {
@@ -126,6 +130,7 @@ class HomeController extends Controller
     public function retornarVeiculo() {
         $carros = Carros::all();
         $clientes = Clientes::all();
+        
         $reservas = Reservas::with('carroReserva', 'clienteReserva')->get();
 
         return view('retornarVeiculo', compact('carros', 'reservas', 'clientes')); 

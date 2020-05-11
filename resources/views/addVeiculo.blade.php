@@ -15,7 +15,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Placa:</label>
-                            <input type="text" name="placa" class="form-control" required>
+                            <input type="text" name="placa"  maxlength="10" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Preço:</label>

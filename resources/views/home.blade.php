@@ -23,7 +23,7 @@
                     <a href="{{ url('permissions-superadmin') }}"><button>Access Only Superadmin</button></a>
                     @endif
 -->
-                    <table class="table table-sm table-striped table-bordered">
+                    <table class="table table-sm table-striped table-bordered" id="table">
                         <thead>
                             <tr>
                                 <th>Modelo</th>
